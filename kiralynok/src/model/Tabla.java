@@ -50,20 +50,40 @@ public class Tabla {
         return T;
     }
 // 7.feladat
-    public boolean UresOszlop(int oszlopSzama,char[][] kapott) {
+
+    public boolean UresOszlop(int oszlopSzama) {
         int i = 0;
-        while (i <= 7 && kapott[i][oszlopSzama] == UresCella) {
+        while (i <= 7 && T[i][oszlopSzama] == UresCella) {
             i++;
         }
         return !(i <= 7);
     }
 
-    public boolean UresSor(int sorSzama,char[][] kapott) {
+    public boolean UresSor(int sorSzama) {
         int i = 0;
-        while (i <= 7 && kapott[sorSzama][i] == UresCella) {
+        while (i <= 7 && T[sorSzama][i] == UresCella) {
             i++;
         }
         return !(i <= 7);
     }
 
+    public int UresOszlopokSzama() {
+        int db = 0;
+        for (int i = 0; i <= 7; i++) {
+            if (UresOszlop(i)) {
+                db++;
+            }
+        }
+        return db;
+    }
+
+    public int UresSorokSzama() {
+        int db = 0;
+        for (int i = 0; i <= 7; i++) {
+            if (UresSor(i)) {
+                db++;
+            }
+        }
+        return db;
+    }
 }
