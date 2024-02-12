@@ -13,7 +13,8 @@ public class Kiralynok {
         System.out.println(t.Megjelenit(matrix)); 
         t.Elhelyez(8, matrix);
         System.out.println(t.Megjelenit(matrix)); 
-       
+        System.out.println("Üres oszlopok: "+t.UresOszlop(3, matrix));
+         System.out.println("Üres Sorok: "+t.UresSor(1, matrix));
     }
     
 }

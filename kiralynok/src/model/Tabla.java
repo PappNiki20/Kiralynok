@@ -1,9 +1,10 @@
-
 package model;
+
 public class Tabla {
-      private char[][] T = new char[8][8];
-       private char UresCella;
-       
+
+    private char[][] T = new char[8][8];
+    private char UresCella;
+
 //3.feladat konstruktor elkeszitese
     public Tabla(char c) {
         UresCella = c;
@@ -14,39 +15,55 @@ public class Tabla {
             }
         }
     }
+
     //negyedik feladat
-   public String Megjelenit(char[][] kapott){
-       
-        String megjelen="";
-         for (int i = 0; i <= 7; i++) {
+    public String Megjelenit(char[][] kapott) {
+
+        String megjelen = "";
+        for (int i = 0; i <= 7; i++) {
             for (int j = 0; j <= 7; j++) {
-                megjelen+=(kapott[i][j]);
+                megjelen += (kapott[i][j]);
             }
-            megjelen+=("\n");
+            megjelen += ("\n");
         }
-        megjelen+=("\n");
-        
+        megjelen += ("\n");
+
         return megjelen;
     }
-   
-   //5.feladat
+
+    //5.feladat
     public void Elhelyez(int n, char[][] kapott) {
-    for (int i = 0; i < n; i++) {
-        int sor = (int) (Math.random() * 8);
-        int oszlop = (int) (Math.random() * 8);
+        for (int i = 0; i < n; i++) {
+            int sor = (int) (Math.random() * 8);
+            int oszlop = (int) (Math.random() * 8);
 
-        while (kapott[sor][oszlop] != UresCella) {
-            sor = (int) (Math.random() * 8);
-            oszlop = (int) (Math.random() * 8);
+            while (kapott[sor][oszlop] != UresCella) {
+                sor = (int) (Math.random() * 8);
+                oszlop = (int) (Math.random() * 8);
+            }
+
+            kapott[sor][oszlop] = 'K';
         }
-
-        kapott[sor][oszlop] = 'K';
     }
-}
 
     public char[][] getT() {
         return T;
     }
+// 7.feladat
+    public boolean UresOszlop(int oszlopSzama,char[][] kapott) {
+        int i = 0;
+        while (i <= 7 && kapott[i][oszlopSzama] == UresCella) {
+            i++;
+        }
+        return !(i <= 7);
+    }
 
-    
+    public boolean UresSor(int sorSzama,char[][] kapott) {
+        int i = 0;
+        while (i <= 7 && kapott[sorSzama][i] == UresCella) {
+            i++;
+        }
+        return !(i <= 7);
+    }
+
 }
