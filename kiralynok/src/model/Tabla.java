@@ -14,4 +14,18 @@ public class Tabla {
             }
         }
     }
+    //negyedik feladat
+   public String Mgejelenit(){
+        String megjelen="";
+         for (int i = 0; i <= 7; i++) {
+            for (int j = 0; j <= 7; j++) {
+                megjelen+=(T[i][j]);
+            }
+            megjelen+=("\n");
+        }
+        megjelen+=("\n");
+        
+        return megjelen;
+    }
+    
 }
