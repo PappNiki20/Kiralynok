@@ -1,5 +1,11 @@
 package model;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+
 public class Tabla {
 
     private char[][] T = new char[8][8];
@@ -86,4 +92,15 @@ public class Tabla {
         }
         return db;
     }
+
+     public void FajlbaIr(String tartalom) {
+        try {
+            Path filePath = Paths.get("tablak64.txt");
+
+            Files.writeString(filePath, tartalom, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
